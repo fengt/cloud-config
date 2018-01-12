@@ -1,6 +1,11 @@
 spring:
   profiles:
     active: develop
+  datasource: 
+    url: jdbc:mysql://10.3.22.57:3306/pick
+    username: test
+    password: 123456
+
   
   thymeleaf:
     cache: false
@@ -28,10 +33,6 @@ logging:
 ---
 spring:
   profiles: develop
-  datasource: 
-    url: jdbc:mysql://10.3.22.57:3306/pick
-    username: test
-    password: 123456
 
 ---
 spring:
