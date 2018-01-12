@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: develop
+  
+  thymeleaf:
+    cache: false
+
+  pidfile: shared/tmp/pids/application.pid
+  application: 
+    name: application
+  cloud: 
+    config: 
+      uri: http://localhost:8082
+      profile: dev
+      label: master
+  
+server:
+  port: 10001
+security.oauth2.resource.filter-order: 3
+
+
+logging:
+    level:
+        org.springframework: 'OFF'
+        com.xiaojiuwo.models.mapper: 'DEBUG'
+
+
+---
+spring:
+  profiles: develop
+  datasource: 
+    url: jdbc:mysql://10.3.22.57:3306/pick
+    username: test
+    password: 123456
+
+---
+spring:
+  profiles: test
+
+---
+spring:
+  profiles: demo
+
+---
+spring:
+  profiles: production
